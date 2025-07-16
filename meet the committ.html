@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meet the Committee</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="mtc.css">
+ 
+</head>
+<body>
+
+<nav>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="index.html">
+        <img src="kt1/dag.png.PNG" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+
+      <div class="dropdown" id="about-dropdown">
+        <a href="About Us.html" onclick="toggleDropdown(event)">About</a>
+        <div class="dropdown-content">
+          <a href="what we do.html">What We Do</a>
+          <a href="founder.html">Founder's Story</a>
+          <a href="meet the committ.html">Meet the Committee Members</a>
+        </div>
+      </div>
+      <a href="#"></a>
+      <a href="get involved.html">Get Envolved</a>
+      <a href="#"></a>
+      <a href="sponsor.html">Sponsor a child</a>
+      <a href="#"></a>
+      <a href="Contact Us.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const aboutDropdown = document.getElementById('about-dropdown');
+  let menuOpen = false;
+
+  toggleBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    navLinks.classList.toggle('show');
+    toggleBtn.textContent = menuOpen ? '×' : '☰';
+  });
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    // On mobile: open/close About dropdown
+    if (window.innerWidth <= 768) {
+      aboutDropdown.classList.toggle('open');
+    }
+  }
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function (e) {
+    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+      toggleBtn.textContent = '☰';
+      menuOpen = false;
+    }
+  });
+</script>
+<div class="container">
+        <!-- Meet the Board Section -->
+        <div class="section-title">
+            <h2>Our Dedicated Committee</h2>
+        </div>
+        
+        <div class="board-members">
+            <!-- Founder -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="kt1/saka.jpg" alt="Ssaka Daglous">
+                </div>
+                <div class="member-info">
+                    <h3>Ssaka Daglous</h3>
+                    <p class="role">Visionary and Founder</p>
+                    <p class="bio">Founded Kalayilayi and Sons in 1995 with a vision to create sustainable change through community empowerment.</p>
+                </div>
+            </div>
+            
+            <!-- Procurement -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=712&q=80" alt="Bukenya Noah">
+                </div>
+                <div class="member-info">
+                    <h3>Bukenya Noah</h3>
+                    <p class="role">Procurement and Maintenance</p>
+                    <p class="bio">Ensures all resources are acquired ethically and maintained properly for maximum community benefit.</p>
+                </div>
+            </div>
+            
+            <!-- Athlete -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="James">
+                </div>
+                <div class="member-info">
+                    <h3>James</h3>
+                    <p class="role">Athlete and Mobilizer</p>
+                    <p class="bio">Uses sports to engage youth and mobilize communities toward positive social change.</p>
+                </div>
+            </div>
+
+            <!-- HR -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Esther">
+                </div>
+                <div class="member-info">
+                    <h3>Esther</h3>
+                    <p class="role">Human Resources and Operations</p>
+                    <p class="bio">Manages our team of volunteers and staff with compassion and efficiency.</p>
+                </div>
+            </div>
+
+            <!-- Nutrition -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Mariam">
+                </div>
+                <div class="member-info">
+                    <h3>Mariam</h3>
+                    <p class="role">Food Keeper and Nutrition</p>
+                    <p class="bio">Ensures all food distribution meets nutritional standards and reaches those most in need.</p>
+                </div>
+            </div>
+
+            <!-- Fundraising -->
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="John">
+                </div>
+                <div class="member-info">
+                    <h3>John</h3>
+                    <p class="role">Planning and Fundraising</p>
+                    <p class="bio">Develops strategic initiatives and secures resources to expand our impact.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Priya's Story Section -->
+        <div class="our-story">
+            <h3 class="story-title">Priya's Journey: From Beneficiary to Leader</h3>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>In 2001, 8-year-old Priya was found selling flowers at a busy intersection by our founder Ssaka Daglous. Her parents, struggling to make ends meet, couldn't afford to send her to school. This encounter became the catalyst for our "Education for All" initiative.</p>
+                    
+                    <p>With Kalayilayi's support, Priya not only completed her education but excelled academically. She became the first in her family to attend university, earning a degree in Social Work.</p>
+                    
+                    <div class="highlight-quote">
+                        "Kalayilayi didn't just give me an education - they gave me a family and a purpose. Now I get to help other children discover their potential, just as they helped me."
+                    </div>
+                    
+                    <p>Today, Priya serves as our Regional Education Coordinator, overseeing programs that support over 500 children annually. Her office wall displays her first flower basket - a reminder of how far compassion can take us.</p>
+                </div>
+                <div class="story-img">
+                    <img src="kt1/teacher.jpg" alt="Priya teaching children">
+                </div>
+            </div>
+        </div>
+    </div>
+        
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="kt1/dag.png.PNG" alt="kalayilayi Logo" width="300px">
+        <h3>kalayilayi and sons</h3>
+      </div>
+  
+      <div class="footer-about">
+        <h4>About</h4>
+        <p>
+          KALAYILAYI <span>AND SONS </span> is committed to helping poor or less fortunate people to grow.
+          We want to see people of all walks of life succeed and make the nation a better place for all.
+        </p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About Us.html">About Us</a></li>
+          <li><a href="makindye.html">city Warriors</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="Service.html">Service</a></li>
+          <li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:info@aamnationcare.org">kalayilayiandsons@gmail.com</a></p>
+        <p><a href="tel:+923044133876">+25675969063</a></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61571330373030"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/kalayilayiandsons/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/DaglusSsak71387"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@kalayilayi.lyton?lang=en"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.pinterest.com/kalayilayiandsons/"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.youtube.com/results?search_query=kalayilayi+and+sons"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>Sign Up For Newsletter</h4>
+        <form id="subscibernl">
+          <input type="email" name="email" placeholder="Enter Email" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Copyright © 2021-2024. | <a href="#">KALAYILAYI AND SONS</a>. All Rights Reserved | Made with ❤️ by <a href="#">SSAKA</a></p>
+    </div>
+  
+    </footer>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        menuToggle.classList.toggle("open");
+    });
+});
+    </script>
+   
+   </body>
+</html>

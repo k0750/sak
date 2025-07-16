@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="custom.css">
+ 
+</head>
+<body>
+
+<nav>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="index.html">
+        <img src="../kt1/dag.png.PNG" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="nav-links">
+      <a href="About Us.html" class="active">Home</a>
+
+      <div class="dropdown" id="about-dropdown">
+        <a href="About Us.html" onclick="toggleDropdown(event)">About</a>
+        <div class="dropdown-content">
+          <a href="what we do.html">What We Do</a>
+          <a href="founder.html">Founder's Story</a>
+          <a href="meet the committ.html">Meet the Committee Members</a>
+        </div>
+      </div>
+      <a href="#"></a>
+      <a href="get involved.html">Get Envolved</a>
+      <a href="#"></a>
+      <a href="sponsor.html">Sponsor a child</a>
+      <a href="#"></a>
+      <a href="Contact Us.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const aboutDropdown = document.getElementById('about-dropdown');
+  let menuOpen = false;
+
+  toggleBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    navLinks.classList.toggle('show');
+    toggleBtn.textContent = menuOpen ? '×' : '☰';
+  });
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    // On mobile: open/close About dropdown
+    if (window.innerWidth <= 768) {
+      aboutDropdown.classList.toggle('open');
+    }
+  }
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function (e) {
+    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+      toggleBtn.textContent = '☰';
+      menuOpen = false;
+    }
+  });
+</script>
+
+
+
+
+    <section class="about-us">
+        <!-- Hero Section -->
+        <section class="about-section">
+          <div class="container">
+              <div class="about-content">
+                  <div class="mission-story">
+                      <h2>Our Journey of Impact</h2>
+                      <p>In 2010, we began with a simple belief: <span class="highlight">every community deserves access to sustainable solutions</span>. What started as a small initiative to provide clean water in one village has grown into a global movement spanning 2 districtic and one county.</p>
+                      
+                      <p>Our mission remains focused on creating lasting change through <span class="highlight">education, healthcare, and economic empowerment</span>. To date, we've impacted over <span class="highlight">500,000 lives</span>, but our work is far from done.</p>
+                      
+                      <ul class="values-list">
+                          <li><strong>Compassion:</strong> We meet communities where they are, listening to their unique needs.</li>
+                          <li><strong>Integrity:</strong> Every dollar donated is accounted for with full transparency.</li>
+                          <li><strong>Sustainability:</strong> We build programs that continue to thrive long after our initial involvement.</li>
+                      </ul>
+                      
+                      <a href="#" class="cta-button">Join Our Mission</a>
+                  </div>
+                  
+                  <div class="image-container">
+                      <img src="kt1/Kalayilayi (2).jpg" alt="Our diverse team collaborating on community projects" loading="lazy">
+                      <div class="image-caption">Our leadership team discussing sustainable solutions in Kenya, 2023</div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+        <!-- Our Legacy -->
+        <div class="section">
+            <h2>Our Legacy</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>For generations, Kalayilayi & Son has stood as a beacon of excellence, integrity, and innovation. Rooted in tradition yet driven by progress, we have built a reputation for delivering unparalleled quality and trust in every endeavor.</p>
+            </div>
+        </div>
+
+        <!-- Priya's Story -->
+        <div class="section priya-story">
+            <h2>Priya's Journey</h2>
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="kt1/Kalayilayi (2).jpg" alt="Priya Kalayilayi">
+                    <p class="caption">Priya Kalayilayi, Director of Operations</p>
+                </div>
+                <div class="profile-text">
+                    <p>From a young age, Priya Kalayilayi was drawn to the family business, often spending weekends observing her father's meticulous approach to client relationships. After earning her MBA from the University of Chicago, she returned home with a mission: to bridge tradition with innovation.</p>
+                    <p>Under her leadership, Kalayilayi & Son adopted sustainable practices, expanded into new markets, and launched mentorship programs for women in the industry.</p>
+                    <blockquote>"What excites me isn't just profit—it's the people behind every project. When we invest in our team and community, success follows naturally."</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="section values">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We strive for perfection in every detail, delivering quality that stands the test of time.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>Honesty and transparency guide every decision and interaction.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace change and creativity to stay ahead in a evolving world.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Community</h3>
+                    <p>Our success is measured by how we lift up those around us.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="section why-us">
+            <h2>Why Choose Us?</h2>
+            <ul class="benefits-list">
+                <li><strong>Generational Expertise:</strong> Three decades of trusted service</li>
+                <li><strong>Client-First Approach:</strong> Tailored solutions for every need</li>
+                <li><strong>Sustainable Practices:</strong> Eco-conscious operations</li>
+                <li><strong>Cutting-Edge Solutions:</strong> Blending tradition with technology</li>
+                <li><strong>Family Values:</strong> Treating every client like kin</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // Image hover effect
+        const priyaImage = document.querySelector('.profile-image img');
+        priyaImage.addEventListener('mouseenter', () => {
+            priyaImage.style.transform = 'scale(1.05)';
+        });
+        priyaImage.addEventListener('mouseleave', () => {
+            priyaImage.style.transform = 'scale(1)';
+        });
+
+        // Animate value cards on scroll
+        const valueCards = document.querySelectorAll('.value-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        valueCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+        
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="kt1/dag.png.PNG" alt="kalayilayi Logo" width="300px">
+        <h3>kalayilayi and sons</h3>
+      </div>
+  
+      <div class="footer-about">
+        <h4>About</h4>
+        <p>
+          KALAYILAYI <span>AND SONS </span> is committed to helping poor or less fortunate people to grow.
+          We want to see people of all walks of life succeed and make the nation a better place for all.
+        </p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="makindye.html">city Warriors</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="Service.html">Service</a></li>
+          <li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:info@aamnationcare.org">kalayilayiandsons@gmail.com</a></p>
+        <p><a href="tel:+923044133876">+25675969063</a></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61571330373030"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/kalayilayiandsons/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/DaglusSsak71387"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@kalayilayi.lyton?lang=en"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.pinterest.com/kalayilayiandsons/"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.youtube.com/results?search_query=kalayilayi+and+sons"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>Sign Up For Newsletter</h4>
+        <form id="subscibernl">
+          <input type="email" name="email" placeholder="Enter Email" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Copyright © 2021-2024. | <a href="#">KALAYILAYI AND SONS</a>. All Rights Reserved | Made with ❤️ by <a href="#">SSAKA</a></p>
+    </div>
+  
+    </footer>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        menuToggle.classList.toggle("open");
+    });
+});
+    </script>
+   
+   </body>
+</html>

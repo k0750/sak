@@ -1,0 +1,426 @@
+ /* General Reset */
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+ body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", serif
+    
+}
+    
+
+
+    /* hero section styles */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: url('kt1/rf.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .brand img {
+      height: 40px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 8px 5px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 200px;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Responsive: Hide full menu and show toggle button */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        color: #333;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+      }
+
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+
+      .dropdown > a::after {
+        content: ' ▾';
+      }
+    }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #e74c3c;
+        }
+
+        /* Involvement Options */
+        .involvement-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .option-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 25px;
+        }
+
+        .option-card h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .option-card p {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+        }
+
+        .action-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Success Stories */
+        .success-stories {
+            background: #fff;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 40px;
+        }
+
+        .story-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background: #fdf2f2;
+            border-radius: 10px;
+            padding: 30px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .story-card h4 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .story-card p {
+            color: #555;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .option-card {
+                padding: 30px;
+            }
+            
+            .success-stories {
+                padding: 30px;
+            }
+        }
+    
+  /* Footer Styles */
+  .footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 40px 20px;
+  }
+  span{
+    color: blue;
+    font-size: bold 19px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .footer-logo h3 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact,
+  .footer-newsletter {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-about h4,
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-newsletter h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-about p {
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #ff8c00; /* Orange links */
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-contact p {
+    margin: 5px 0;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    color: #ff8c00;
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .footer-newsletter input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .footer-newsletter button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom a {
+    color: #ff8c00;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-contact,
+    .footer-newsletter {
+      text-align: center;
+    }
+  
+    .footer-newsletter form {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

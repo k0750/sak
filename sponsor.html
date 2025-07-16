@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Sponsor a child</title>
+    <link rel="stylesheet" href="sponsor.css">
+   
+   <body>
+    <nav>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="index.html">
+        <img src="kt1/dag.png.PNG" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+
+      <div class="dropdown" id="about-dropdown">
+        <a href="About Us.html" onclick="toggleDropdown(event)">About</a>
+        <div class="dropdown-content">
+          <a href="what we do.html">What We Do</a>
+          <a href="founder.html">Founder's Story</a>
+          <a href="meet the committ.html">Meet the Committee Members</a>
+        </div>
+      </div>
+      <a href="#"></a>
+      <a href="#">Get Envolved</a>
+      <a href="#"></a>
+      <a href="sponsor.html">Sponsor a child</a>
+      <a href="#"></a>
+      <a href="Contact Us.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const aboutDropdown = document.getElementById('about-dropdown');
+  let menuOpen = false;
+
+  toggleBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    navLinks.classList.toggle('show');
+    toggleBtn.textContent = menuOpen ? '×' : '☰';
+  });
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    // On mobile: open/close About dropdown
+    if (window.innerWidth <= 768) {
+      aboutDropdown.classList.toggle('open');
+    }
+  }
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function (e) {
+    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+      toggleBtn.textContent = '☰';
+      menuOpen = false;
+    }
+  });
+</script>
+
+    <div class="background-container">
+        <img src="kt1/home spon 22.jpg" alt="view">
+        <div class="gradient-overlay"></div>
+        <div class="content-overlay">
+            <h1 class="a">Help Build Futures</h1>
+            <p>Join us in empowering lives through your generous support.</p>
+            <p>
+              Every contribution counts.
+            </p>
+            <button>Donate Now</button>
+          </div>
+    
+    </div>
+
+    <div class="wrapper">
+        <!-- Left Section: Image -->
+        <div class="left-section">
+            <img src="kt1/search.webp" alt="Smiling Child">
+        </div>
+
+        <!-- Right Section: Form -->
+        <div class="right-section">
+            <h1>Sponsor A Child</h1>
+            <form id="sponsorform">
+                <!-- Dropdown for Country -->
+                <form action="script.js" method="GET">
+                    <div class="form-section">
+                    <label for="country">Any County</label>
+                    <select id="country" name="county">
+                        <option value="">Select a county</option>
+                        <option value="makindye">Makindye</option>
+                        <option value="mityana">Mityana</option>
+                        <option href="masaka">masaka</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown for Age -->
+                <div class="form-group">
+                    <label for="age">Any Age</label>
+                    <select id="age" name="age">
+                        <option value="">Select an age</option>
+                        <option value="0-5">0-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11-15">11-15</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown for Gender -->
+                <div class="form-group">
+                    <label for="gender">Any Gender</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <!-- Search Button -->
+                <button type="submit">SEARCH FOR A CHILD</button>
+            </form>
+        </div>
+    </div>
+    <style>
+      #sponsorform{
+        background-color: rgb(236, 242, 247);
+        border-radius: 7px;
+      }
+      .sponsor-cards{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        overflow-y: scroll;
+        background-color: rgba(95, 158, 160, 0.688);
+        justify-self: center;
+        height: fit-content;
+        max-height: 80vh;
+        flex-wrap: wrap;
+        padding: 15px 5%;
+        display: none;
+      }
+      .sponsor-cards *{
+        padding: 0;
+        margin: 0;
+      }
+      .sponsor-cards .card{
+        justify-content: center;
+        display: flex;
+        padding: none;
+        align-items: center;
+        width: 40%;
+        justify-content: space-evenly;
+        aspect-ratio: 2/1;
+      }
+      .sponsor-cards .card img{
+        height:80%;
+        width: 35%;
+        object-fit: cover;
+      }
+      .sponsor-cards .card .info{
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+      }
+      .step{
+        font-weight: bold;
+        color: rgb(101, 53, 19);
+        font-size: 0.8rem;
+      }
+      @media (max-width: 768px) {
+    .sponsor-cards .card {
+        flex-direction: column;
+        width: 90%;
+        aspect-ratio: unset;
+        padding: 15px;
+    }
+
+    .sponsor-cards .card img {
+        width: 90%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .sponsor-cards .card .info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .step {
+        font-size: 1rem;
+    }
+}
+      .cloader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        display: none;
+      }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    </style>
+    <div class="sponsor-cards">
+      <div class="cloader">
+
+      </div>
+    </div>
+
+    <section class="sponsorship-section">
+        <div class="content-wrapper">
+            <!-- Left: Text Content -->
+            <div class="text-content">
+                <h1>How Child Sponsorship Works</h1>
+                <p>
+                    Child sponsorship helps us connect you with a child you believe in. When you sponsor a child, you are helping to break the cycle of poverty. Not only do you transform the life of a child, your generosity also extends to the entire community around them.
+                </p>
+                <p>
+                    Your sponsorship support will provide access to basic necessities such as food, clean water, education, and health care. Because of our child-focused community approach, for every child you sponsor, four more children benefit too.
+                </p>
+                <p>
+                    Child sponsorship is available to help children in many communities among 35 countries. With your belief, we can transform the life of a child and their community for good.
+                </p>
+            </div>
+
+            <!-- Right: Visual Illustration -->
+            <div class="image-content">
+                <img src="kt1/a.jpg" alt="Child Sponsorship Illustration">
+            </div>
+        </div>
+    </section>
+
+ 
+    
+    <!-- Section: Feature Cards -->
+    <section class="features-section">
+        <!-- Education -->
+        <div class="feature-card">
+            <img src="kt1/bnt.jpg" alt="Sponsored child writes on a chalkboard" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-pencil-alt"></i>
+            </div>
+            <h3>EDUCATION</h3>
+            <p>Access to education, classroom repairs, school supplies and training for teachers and parents provide a child with opportunities for a better future.</p>
+        </div>
+
+        <!-- Safe Water -->
+        <div class="feature-card">
+            <img src="kt1/safe water w.jpg" alt="Sponsored child drinking water" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-tint"></i>
+            </div>
+            <h3>SAFE WATER</h3>
+            <p>Access to safe water through well-drilling, pumps and training in hygiene and sanitation decreases child mortality and frees up time for education instead of water collection.</p>
+        </div>
+
+        <!-- Nutritious Food -->
+        <div class="feature-card">
+            <img src="kt1/ht.jpg" alt="Sponsored child holding cabbage" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h3>NUTRITIOUS FOOD</h3>
+            <p>Going beyond food distribution to a focus on creating sustainable food supplies through agricultural programs and nutritional training ensures that children are well-nourished and healthy.</p>
+        </div>
+
+        <!-- Healthcare -->
+        <div class="feature-card">
+            <img src="kt1/healthy 2.webp" alt="Medical worker measuring child's arm" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>HEALTHCARE</h3>
+            <p>Good health is the foundation of a child’s life. Access to essential services, vaccinations, medical clinics and training in disease prevention provide stronger health for children and their communities.</p>
+        </div>
+
+        <!-- Child Protection -->
+        <div class="feature-card">
+            <img src="kt1/cfgh.jpg" alt="Child worker's hand is bandaged" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>CHILD PROTECTION & PARTICIPATION</h3>
+            <p>We advocate for child rights and encourage children to speak up against abuse and injustice. We also work with local leaders to strengthen their skills and encourage networking with government groups.</p>
+        </div>
+
+        <!-- Economic Empowerment -->
+        <div class="feature-card">
+            <img src="kt1/df.jpg" alt="Sponsored child smiling in front of truck" class="feature-image">
+            <div class="icon-container">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>ECONOMIC EMPOWERMENT</h3>
+            <p>Microloans, business training and various trades and skills training enable families to provide for their children’s needs, helping them to build a better future.</p>
+        </div>
+    </section>
+
+    
+    <!-- Section 1: Building the Foundation -->
+    <section class="sponsor-section" style="font-family: Josefin Sans, serif;">
+        <div class="sponsor-content">
+            <h1 class="large-number">1</h1>
+            <h1>EVALUATION AND GROWTH</h1>
+            <h2>Building the Foundation</h2>
+            <p>We partner with community members to understand their needs, goals and resources, and work together to find long-term solutions to the challenges they face.</p>
+        </div>
+        <div class="sponsor-image" style="background-image: url('kt1/rt.jpg');"></div>
+    </section>
+
+    <!-- Section 2: Evaluate and Grow -->
+    <section class="sponsor-section">
+        <div class="sponsor-content">
+            <h1 class="large-number">2</h1>
+            <h2>Evaluate and Grow</h2>
+            <p>We adapt plans as we begin to see change in children’s lives so that the community continues to meet its goals. As more community members get involved, the community takes increasing ownership of its success.</p>
+        </div>
+        <div class="sponsor-image" style="background-image: url('kt1/school on repa.jpg');"></div>
+    </section>
+
+    <!-- Section 3: Nutrition Focus -->
+    <section class="sponsor-section">
+        <div class="sponsor-content">
+            <h1 class="large-number">3</h1>
+            <h2>Enhance Sustainability</h2>
+            
+            <p>Thanks to support from donors like you, families enjoy better living conditions and are empowered with knowledge and skills to create a brighter future for their children.</p>
+        </div>
+        <div class="sponsor-image" style="background-image: url('kt1/df.jpg');"></div>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="text-content">
+            <h2>What you get when you sponsor a child</h2>
+            <p>You can connect with your sponsored child in so many meaningful ways...</p>
+            <li><a href="learn- more.htm">Learn More</a></li style='text-decoration:none;'>
+        </div>
+        <div class="image-content">
+            <img src="kt1/94f65d9e250e3e92b5a94d3ae3832b70ccda2ddc.webp" alt="A person writing a letter to their sponsored child" width="450px" height="310px">
+        </div>
+    </div>
+
+<div class="container">
+    <div class="header">
+        <h1>Donate to Kalayilayi and Sons</h1>
+        <p>Your contribution helps provide support to children and families in need.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Feed a Family for a Week</div>
+        <div class="card-price">$50</div>
+        <button class="add-to-cart" onclick="addToCart('Feed a Family for a Week', 50)">Add to Cart</button>
+    </div>
+    
+    <div class="card">
+        <div class="card-title">Provide Clean Water</div>
+        <div class="card-price">$100</div>
+        <button class="add-to-cart" onclick="addToCart('Provide Clean Water', 100)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Sponsor a Child</div>
+        <div class="card-price">$200</div>
+        <button class="add-to-cart" onclick="addToCart('Sponsor a Child', 200)">Add to Cart</button>
+    </div>
+
+    <div class="cart">
+        <h3>Your Donation Cart</h3>
+        <div class="cart-items" id="cart-items">
+            <!-- Items will be added here -->
+        </div>
+        <div class="cart-total" id="cart-total">
+            Total: $0
+        </div>
+        <button class="donate-button" onclick="donate()">Proceed to Donation</button>
+    </div>
+</div>
+
+<script>
+    let cart = [];
+    
+    function addToCart(itemName, itemPrice) {
+        const item = { name: itemName, price: itemPrice };
+        cart.push(item);
+        renderCart();
+    }
+
+    function renderCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        
+        // Clear previous items
+        cartItemsContainer.innerHTML = '';
+        
+        // Render cart items
+        let total = 0;
+        cart.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `<span>${item.name}</span> <span>$${item.price}</span>`;
+            cartItemsContainer.appendChild(cartItem);
+            total += item.price;
+        });
+
+        // Update total amount
+        cartTotal.innerHTML = `Total: $${total}`;
+    }
+
+    function donate() {
+        if (cart.length === 0) {
+            alert('Please add items to your cart before proceeding.');
+        } else {
+            alert('Thank you for your generous donation!');
+            cart = []; // Reset cart after donation
+            renderCart();
+        }
+    }
+</script>
+
+
+
+    
+  
+<div class="faq-container">
+    <div class="faq-header">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How much does it cost to sponsor a child?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Sponsoring a child through Kalayilayi and Sons costs $35 per month, which provides essential support for education, health, and community development.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How does child sponsorship work?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Child sponsorship connects you with a child in need. Your contributions help provide them with life-changing benefits like education, healthcare, and better living conditions.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What does child sponsorship do for the child?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Your sponsorship ensures that the child receives access to basic needs, education, and health services, empowering them to build a brighter future.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Will my sponsorship contributions go directly to my sponsored children or their family?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Contributions are pooled to fund programs that benefit your sponsored child and their entire community, ensuring long-term impact and development.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Is the money I give to Kalayilayi and Sons handled responsibly?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes, Kalayilayi and Sons ensures that every dollar is allocated effectively and transparently to benefit children and their communities.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How can I track my sponsored child's progress?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        You will receive regular updates, including letters and photos, along with reports on community development projects.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How are children selected for sponsorship?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Children are selected based on their family’s income, health conditions, and the level of support available in their community.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How long will I sponsor my child?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Sponsorship typically lasts until the child completes their education or becomes self-reliant. You may also choose to continue supporting other children.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Can I adopt or bring a sponsored child to my country?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Child sponsorship is not adoption. It is a program designed to support children in their local communities without removing them from their cultural environment.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Will my monthly child sponsorship donation ever increase?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Kalayilayi and Sons strives to keep costs stable, but adjustments may occur to account for inflation or expanded services.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+        
+
+
+        
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="kt1/dag.png.PNG" alt="kalayilayi Logo" width="300px">
+            <h3>kalayilayi and sons</h3>
+          </div>
+      
+          <div class="footer-about">
+            <h4>About</h4>
+            <p>
+              KALAYILAYI <span>AND SONS </span> is committed to helping poor or less fortunate people to grow.
+              We want to see people of all walks of life succeed and make the nation a better place for all.
+            </p>
+          </div>
+      
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About Us.html">About Us</a></li>
+             <li><a href="makindye.html">city Warriors</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="Service.html">Service</a></li>
+              <li><a href="Contact Us.html">Contact</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><a href="mailto:info@aamnationcare.org">info@aamnationcare.org</a></p>
+            <p><a href="tel:+923044133876">+25675969063</a></p>
+           <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61571330373030"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/kalayilayiandsons/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/DaglusSsak71387"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@kalayilayi.lyton?lang=en"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.pinterest.com/kalayilayiandsons/"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.youtube.com/results?search_query=kalayilayi+and+sons"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+          <div class="footer-newsletter">
+            <h4>Sign Up For Newsletter</h4>
+            <form id="subscibernl">
+              <input type="email" name="email" placeholder="Enter Email" required>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>Copyright © 2021-2024. | <a href="#">KALAYILAYI AND SONS</a>. All Rights Reserved | Made with ❤️ by <a href="#">SSAKA</a></p>
+        </div>
+      
+        </footer>
+
+
+<script>
+    // Select all FAQ questions
+const faqItems = document.querySelectorAll('.faq-item');
+
+// Add event listener to each FAQ question
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Close all other FAQ items
+        faqItems.forEach(i => {
+            if (i !== item) i.classList.remove('active');
+        });
+
+        // Toggle the clicked item
+        item.classList.toggle('active');
+    });
+});
+
+</script> 
+<script src="jquery-3.7.1.min.js"></script>  
+    <script src="script.js"></script>
+    <script>
+          $(document).ready(function() {
+              $("#sponsorform").submit(function(event) {
+                  event.preventDefault(); // Prevent default form submission
+
+                  // Collect form data
+                  var formData = $(this).serialize();
+                  $(".sponsor-cards").css("display","flex");
+                  $(".sponsor-cards .card").remove();
+                  $(".cloader").show();
+
+                  // Send AJAX request
+                  $.ajax({
+                      url: "search.php", // Replace with your API endpoint
+                      type: "GET", // Change to GET if needed
+                      data: formData,
+                      dataType: "json",
+                      success: function(response) {
+                        
+                        response.forEach(item => {
+                          $(".sponsor-cards").append(
+                        '<div class="card">' +
+                        '<img src="' + item.image_path + '" alt="' + item.name + '">' +
+                        '<div class="info">' +
+                        '<p><span class="step">Name:</span> ' + item.name + '</p>' +
+                        '<p><span class="step">Age:</span> ' + item.age + '</p>' +
+                        '<p><span class="step">Gender:</span> ' + item.gender + '</p>' +
+                        '<p><span class="step">Location:</span> ' + item.county + '</p>' +
+                        '<p><span class="step">Goal:</span> ' + item.goal + '</p>' +
+                        '<p><span class="step">Future Aspiration:</span> ' + item.future_aspiration + '</p>' +
+                        '<p><span class="step">How Joined:</span> ' + item.how_joined + '</p>' +
+                        '</div>' +
+                        '</div>'
+                    );
+                        });
+                        $(".cloader").hide();
+                      },
+                      error: function(xhr, status, error) {
+                          $(".sponsor-cards").append("<p>No Results Found</p>");
+                      }
+                  });
+              });
+
+              $("#subscibernl").submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        var formData = $(this).serialize();
+        // Send AJAX request
+        $.ajax({
+            url: "addsubscriber.php", // Replace with your API endpoint
+            type: "POST", // Change to GET if needed
+            data: formData,
+            success: function(response) {
+              alert(response);
+            },
+            error: function(xhr, status, error) {
+              alert(error)
+            }
+        });
+    });
+          });
+    </script>
+   </body>
+</html>

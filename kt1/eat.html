@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .brand img {
+      height: 40px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 8px 5px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 200px;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Responsive: Hide full menu and show toggle button */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        color: #333;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+      }
+
+      .dropdown.open .dropdown-content {
+        display: block;
+      }
+
+      .dropdown > a::after {
+        content: ' ▾';
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="/">
+        <img src="../kt1/dag.png.PNG" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="nav-links">
+      <a href="#" class="active">Home</a>
+
+      <div class="dropdown" id="about-dropdown">
+        <a href="#" onclick="toggleDropdown(event)">About</a>
+        <div class="dropdown-content">
+          <a href="#">What We Do</a>
+          <a href="#">Founder's Story</a>
+          <a href="#">Meet the Committee Members</a>
+        </div>
+      </div>
+
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const aboutDropdown = document.getElementById('about-dropdown');
+  let menuOpen = false;
+
+  toggleBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    navLinks.classList.toggle('show');
+    toggleBtn.textContent = menuOpen ? '×' : '☰';
+  });
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    // On mobile: open/close About dropdown
+    if (window.innerWidth <= 768) {
+      aboutDropdown.classList.toggle('open');
+    }
+  }
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function (e) {
+    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+      toggleBtn.textContent = '☰';
+      menuOpen = false;
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>what we do</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="w.css">
+ 
+</head>
+<body>
+
+<nav>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="index.html">
+        <img src="kt1/dag.png.PNG" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- Navigation links -->
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+
+      <div class="dropdown" id="about-dropdown">
+        <a href="About Us.html" onclick="toggleDropdown(event)">About</a>
+        <div class="dropdown-content">
+          <a href="what we do.html">What We Do</a>
+          <a href="founder.html">Founder's Story</a>
+          <a href="meet the committ.html">Meet the Committee Members</a>
+        </div>
+      </div>
+      <a href="#"></a>
+      <a href="get involved.html">Get Envolved</a>
+      <a href="#"></a>
+      <a href="sponsor.html">Sponsor a child</a>
+      <a href="#"></a>
+      <a href="Contact Us.html">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const aboutDropdown = document.getElementById('about-dropdown');
+  let menuOpen = false;
+
+  toggleBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    navLinks.classList.toggle('show');
+    toggleBtn.textContent = menuOpen ? '×' : '☰';
+  });
+
+  function toggleDropdown(e) {
+    e.preventDefault();
+    // On mobile: open/close About dropdown
+    if (window.innerWidth <= 768) {
+      aboutDropdown.classList.toggle('open');
+    }
+  }
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener('click', function (e) {
+    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('show');
+      toggleBtn.textContent = '☰';
+      menuOpen = false;
+    }
+  });
+</script>
+
+
+ <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>What We Do at Kalayilayi and Sons</h1>
+            <p>We are committed to making a meaningful difference in the lives of individuals and communities through compassion, service, and sustainable development.</p>
+        </div>
+
+        <!-- Initiatives Grid -->
+        <div class="initiatives">
+            <!-- Education -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Education & Youth Empowerment</h3>
+                <p>Providing scholarships, school supplies, and mentorship programs for underprivileged children. Supporting vocational training for sustainable livelihoods.</p>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Healthcare & Wellness</h3>
+                <p>Organizing medical camps, free health check-ups, and awareness programs in underserved areas. Assisting families with essential medicines.</p>
+            </div>
+
+            <!-- Poverty Alleviation -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Poverty Alleviation</h3>
+                <p>Running food distribution drives and supporting income-generating projects for marginalized families.</p>
+            </div>
+
+            <!-- Community Development -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Community Development</h3>
+                <p>Building infrastructure like clean water systems and schools. Promoting environmental sustainability.</p>
+            </div>
+
+            <!-- Disaster Relief -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <h3>Disaster Relief</h3>
+                <p>Providing immediate assistance (food, shelter, medical aid) to communities affected by disasters.</p>
+            </div>
+
+            <!-- Advocacy -->
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Advocacy & Awareness</h3>
+                <p>Campaigning for social justice, human rights, and equal opportunities for all.</p>
+            </div>
+        </div>
+
+        <!-- Call-to-Action -->
+         <div class="container">
+        <!-- Join Our Mission Section -->
+        <div class="mission-cta">
+            <h2>Join Us in Our Mission!</h2>
+            <p>Together, we can create lasting change. Whether through donations or volunteering, your support makes our work possible.</p>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn btn-donate">
+                    <i class="fas fa-hand-holding-heart"></i> Donate Now
+                </a>
+                <a href="#" class="btn btn-volunteer">
+                    <i class="fas fa-hands-helping"></i> Volunteer
+                </a>
+            </div>
+        </div>
+    </div>
+        
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="kt1/dag.png.PNG" alt="kalayilayi Logo" width="300px">
+        <h3>kalayilayi and sons</h3>
+      </div>
+  
+      <div class="footer-about">
+        <h4>About</h4>
+        <p>
+          KALAYILAYI <span>AND SONS </span> is committed to helping poor or less fortunate people to grow.
+          We want to see people of all walks of life succeed and make the nation a better place for all.
+        </p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About Us.html">About Us</a></li>
+          <li><a href="City warriors.html">city Warriors</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="Service.html">Service</a></li>
+          <li><a href="Contact Us.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:info@aamnationcare.org">kalayilayiandsons@gmail.com</a></p>
+        <p><a href="tel:+923044133876">+25675969063</a></p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61571330373030"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/kalayilayiandsons/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/DaglusSsak71387"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@kalayilayi.lyton?lang=en"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.pinterest.com/kalayilayiandsons/"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.youtube.com/results?search_query=kalayilayi+and+sons"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <div class="footer-newsletter">
+        <h4>Sign Up For Newsletter</h4>
+        <form id="subscibernl">
+          <input type="email" name="email" placeholder="Enter Email" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Copyright © 2021-2024. | <a href="#">KALAYILAYI AND SONS</a>. All Rights Reserved | Made with ❤️ by <a href="#">SSAKA</a></p>
+    </div>
+  
+    </footer>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script> 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        menuToggle.classList.toggle("open");
+    });
+});
+    </script>
+   
+   </body>
+</html>
